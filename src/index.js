@@ -1,13 +1,13 @@
 
 /*
-* vue-touch-ripple
-* Author: surmon@foxmail.com
-* Github: https://github.com/surmon-china/vue-touch-ripple
+* vue-expand-panel
+* Author: timrchen@foxmail.com
+* Github: https://github.com/TimRChen/vue-expand-pannel
 */
 
-import compoment from './ripple.vue'
+import compoment from './expand.vue'
 
-export const touchRipple = compoment
+export const expandPanel = compoment
 
 export const install = function (Vue, options) {
   if (options) {
@@ -16,4 +16,4 @@ export const install = function (Vue, options) {
   Vue.component(compoment.name, compoment)
 }
 
-export default { touchRipple, install }
+export default { expandPanel, install }
