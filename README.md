@@ -10,6 +10,9 @@
 # Vue-expand-panel
 Expand panel component for Vue.
 
+# Example
+[查看在线DEMO](https://timrchen.github.io/demo-item-display/vue-expand-panel/index.html)
+
 # Install
 
 #### NPM
