@@ -1,6 +1,6 @@
 <template>
   <div class="test">
-    <vue-expand-panel v-for="(item, index) in expandList" :key="index" :index="index" :title="item.title">
+    <vue-expand-panel v-for="(item, index) in expandList" :key="index" :title="item.title">
       <div class="section-content" v-for="(data, key) in item.dataList" :key="key">
         <div class="col-txt col-1">{{ data.col_1 }}</div>
         <div class="col-txt col-2">{{ data.col_2 }}</div>
