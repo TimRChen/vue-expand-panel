@@ -1,16 +1,12 @@
 <template>
-  <div class="vue-expand-panel">
-    <ul>
-      <li v-for="(item, index) in expandList" :key="index">
-        <expand-panel :index="index" :title="item.title">
-          <div class="section-content" v-for="(data, key) in item.dataList" :key="key">
-            <div class="col-txt col-1">{{ data.col_1 }}</div>
-            <div class="col-txt col-2">{{ data.col_2 }}</div>
-            <div class="col-txt col-3">{{ data.col_3 }}</div>
-          </div>
-        </expand-panel>
-      </li>
-    </ul>
+  <div class="test">
+    <vue-expand-panel v-for="(item, index) in expandList" :key="index" :index="index" :title="item.title">
+      <div class="section-content" v-for="(data, key) in item.dataList" :key="key">
+        <div class="col-txt col-1">{{ data.col_1 }}</div>
+        <div class="col-txt col-2">{{ data.col_2 }}</div>
+        <div class="col-txt col-3">{{ data.col_3 }}</div>
+      </div>
+    </vue-expand-panel>
   </div>
 </template>
 
@@ -63,7 +59,7 @@ export default {
 </script>
 
 <style lang="scss">
-div.vue-expand-panel {
+div.test {
   .section-content {
     display: flex;
     flex-flow: row;

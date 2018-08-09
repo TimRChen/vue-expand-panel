@@ -1,7 +1,7 @@
 {
   "name": "vue-expand-panel",
   "description": "Expand panel for Vue",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "license": "MIT",
   "private": false,
   "author": {
@@ -111,7 +111,7 @@
     "sinon": "^2.1.0",
     "sinon-chai": "^2.8.0",
     "uglify-js": "^3.0.15",
-    "url-loader": "^0.5.7",
+    "url-loader": "^0.5.9",
     "vue": "^2.5.0",
     "vue-hot-reload-api": "^1.2.0",
     "vue-html-loader": "^1.0.0",

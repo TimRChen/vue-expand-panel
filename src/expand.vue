@@ -2,13 +2,13 @@
   <div class="vue-expand-panel">
     <div class="catalog">
       <div class="item-container">
-        <div class="index-bar" @click="clickBar(index)" :class="{ 'index-bar-border-radius': chooseBar === index && openBar === true }">
+        <div class="index-bar" @click="clickBar()" :class="{ 'index-bar-border-radius': openBar === true }">
           <div class="left-index">{{ title }}</div>
           <div class="right-arrow">
-            <img src="../static/course_page_icon_more.png" :class="{ 'rolling-in-the-deep': chooseBar === index && openBar === true }">
+            <div class="arrow" :class="{ 'rolling-in-the-deep': openBar === true }"></div>
           </div>
         </div>
-        <div class="content" :class="{ 'content-height': chooseBar === index && openBar === true }">
+        <div class="content" :class="{ 'content-height': openBar === true }">
           <slot></slot>
         </div>
       </div>
@@ -20,40 +20,32 @@
 export default {
   name: 'vue-expand-panel',
   props: {
-    index: Number,
     title: String
   },
   data () {
     return {
-      chooseBar: 0,
       openBar: false
     }
   },
   methods: {
-    clickBar (index) {
+    clickBar () {
       const currentOpenBar = this.openBar
-      // 若在同一bar上点击，则对openBar的值取反
-      if (index === this.chooseBar || this.chooseBar === 0) this.openBar = !currentOpenBar
-      this.chooseBar = index
+      this.openBar = !currentOpenBar
     }
   }
 }
 </script>
 
 <style lang="scss">
-.vip-gold-course {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  height: 100vh;
-  > .catalog {
+.vue-expand-panel {
+  .catalog {
     margin: 0 20px;
-    > .item-container {
+    .item-container {
       margin-bottom: 12px;
       .index-bar-border-radius {
         border-radius: 4px 4px 0 0!important;
       }
-      > .index-bar {
+      .index-bar {
         width: 100%;
         height: 32px;
         line-height: 32px;
@@ -63,32 +55,45 @@ export default {
         flex-flow: row;
         justify-content: space-between;
         transition: border-radius .3s ease;
-        > .left-index {
+        .left-index {
           color: #fff;
           font-size: 14px;
           font-weight: bold;
           margin-left: 16px;
         }
-        > .right-arrow {
-          margin: 4px 10px;
-          height: 24px;
+        .right-arrow {
+          height: 100%;
           width: 24px;
-          img.rolling-in-the-deep {
-            transform: rotate3d(0, 0, 1, 0deg);
+          margin-right: 8px;
+          div.rolling-in-the-deep {
+            transform: rotate(-180deg);
           }
-          img {
-            transform: rotate3d(0, 0, 1, -180deg);
+          div.arrow {
             transition: transform .3s ease;
+            display: inline-block;
+            position: relative;
             height: 100%;
             width: 100%;
           }
+          div.arrow::after {
+            display: inline-block;
+            content: " ";
+            height: 6px;
+            width: 6px;
+            border-width: 0 2px 2px 0;
+            border-color: #fff;
+            border-style: solid;
+            transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+            transform-origin: center;
+            transition: transform .3s;
+          }
         }
       }
-      > .content-height {
+      .content-height {
         height: 104px!important;
         border: 1px solid #E2F1FF!important;
       }
-      > .content {
+      .content {
         height: 0;
         overflow: hidden;
         transition: height .3s ease;
