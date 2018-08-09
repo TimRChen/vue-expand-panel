@@ -10,7 +10,7 @@
           </div>
         </expand-panel>
       </li>
-    </ul>s
+    </ul>
   </div>
 </template>
 
