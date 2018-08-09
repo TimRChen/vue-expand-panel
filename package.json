@@ -1,11 +1,11 @@
 {
   "name": "vue-expand-panel",
   "description": "Expand panel for Vue",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "license": "MIT",
   "private": false,
   "author": {
-    "name": "TimRChen",
+    "name": "Tim",
     "email": "timrchen@foxmail.com",
     "url": "https://github.com/TimRChen"
   },
@@ -27,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/surmon-china/vue-expand-panel.git"
+    "url": "https://github.com/TimRChen/vue-expand-panel.git"
   },
   "keywords": [
     "vue-expand-panel",
