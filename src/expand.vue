@@ -57,7 +57,7 @@ export default {
         justify-content: space-between;
         transition: border-radius .3s ease-in-out;
         .left-index {
-          color: #fff;
+          color: #4f4f4f;
           font-size: 14px;
           font-weight: bold;
           margin-left: 16px;
@@ -97,10 +97,11 @@ export default {
         border-bottom: 2px solid #4F4F4F!important;
       }
       .content {
-        height: 0;
+        width: 100%;
+        max-height: 0;
         overflow: hidden;
         border-radius: 0 0 4px 4px;
-        background-color: #F3F9FF;
+        background-color: #fffbee;
         transition: all .3s ease-in-out;
         border-left: 2px solid #FFFBEE;
         border-right: 2px solid #FFFBEE;
