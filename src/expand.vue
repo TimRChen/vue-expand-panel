@@ -50,11 +50,12 @@ export default {
         height: 32px;
         line-height: 32px;
         border-radius: 4px;
-        background-color: #339fff;
+        border: 2px solid #4f4f4f;
+        background-color: #FFD555;
         display: flex;
         flex-flow: row;
         justify-content: space-between;
-        transition: border-radius .3s ease;
+        transition: border-radius .3s ease-in-out;
         .left-index {
           color: #fff;
           font-size: 14px;
@@ -69,7 +70,7 @@ export default {
             transform: rotate(-180deg);
           }
           div.arrow {
-            transition: transform .3s ease;
+            transition: transform .3s ease-out;
             display: inline-block;
             position: relative;
             height: 100%;
@@ -81,7 +82,7 @@ export default {
             height: 6px;
             width: 6px;
             border-width: 0 2px 2px 0;
-            border-color: #fff;
+            border-color: #4f4f4f;
             border-style: solid;
             transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
             transform-origin: center;
@@ -90,16 +91,20 @@ export default {
         }
       }
       .content-height {
-        height: 104px!important;
-        border: 1px solid #E2F1FF!important;
+        max-height: 200px!important;
+        border-left: 2px solid #4F4F4F!important;
+        border-right: 2px solid #4F4F4F!important;
+        border-bottom: 2px solid #4F4F4F!important;
       }
       .content {
         height: 0;
         overflow: hidden;
-        transition: height .3s ease;
-        background-color: #F3F9FF;
-        border: 1px solid #fff;
         border-radius: 0 0 4px 4px;
+        background-color: #F3F9FF;
+        transition: all .3s ease-in-out;
+        border-left: 2px solid #FFFBEE;
+        border-right: 2px solid #FFFBEE;
+        border-bottom: 2px solid #FFFBEE;
       }
     }
   }
